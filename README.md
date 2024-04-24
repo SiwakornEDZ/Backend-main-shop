@@ -1,5 +1,6 @@
 ## Profile
-Siwakorn Kantanabat
+* Siwakorn Kantanabat
+* siwakornqwer@gmail.com
 
 ## Installation
 
