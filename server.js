@@ -21,6 +21,7 @@ app.use('/users', require('./routes/userRoute'))
 app.use('/products', require('./routes/productRoute'))
 app.use('/carts', require('./routes/cartRoute'))
 app.use('/orders', require('./routes/orderRoute'))
+app.use('/coupons', require('./routes/couponRoute'))
 
 app.use(notFound)
 app.use(errorHandler)

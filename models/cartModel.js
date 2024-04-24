@@ -43,6 +43,9 @@ const itemSchema = mongoose.Schema({
   }, 
   title:{
     type: String
+  },
+  categories:{
+    type: String
   }
 });
 
