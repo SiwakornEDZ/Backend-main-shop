@@ -31,3 +31,5 @@ app.listen(port, ()=>{
     connectDb()
     console.log(`Listening to ${port}`);
 })
+
+module.exports = app
