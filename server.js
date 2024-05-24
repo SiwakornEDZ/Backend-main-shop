@@ -25,6 +25,7 @@ app.use('/coupons', require('./routes/couponRoute'))
 
 app.use(notFound)
 app.use(errorHandler)
+app.get("/", (req, res) => { res.send("Express on Vercel"); });
 
 app.listen(port, ()=>{
     connectDb()
