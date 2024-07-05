@@ -1,4 +1,3 @@
-const http = require('http');
 const morgan = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
@@ -9,7 +8,8 @@ const { notFound, errorHandler } = require('./middlewares/errorHandler')
 const cors = require('cors')
 const app = express()
 
-const port = process.env.PORT || 5050
+// const port = process.env.PORT || 5050
+const port = 5002
 app.use(cors())
 //app.use(morgan('dev')).
 app.use(bodyParser.json())
@@ -26,13 +26,25 @@ app.use('/coupons', require('./routes/couponRoute'))
 
 app.use(notFound)
 app.use(errorHandler)
-app.get("/", (req, res) => { res.send("Express on Vercel"); });
+app.get("/", (req, res) => { 
+    res.send("Express on Vercel"); 
+});
 
-app.listen(port, ()=>{
-    connectDb()
-    console.log(`Listening to ${port}`);
-})
+// app.listen(port, ()=>{
+//     connectDb()
+//     console.log(`Listening to ${port}`);
+// })
 
+app.get('/home', (req, res) => {
+    res.status(200).json('Welcome, your app is working well');
+  })
+  
+  
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+  });
+  
+  // Export the Express API
 module.exports = app
 
 // const server = http.createServer((req, res) => {
