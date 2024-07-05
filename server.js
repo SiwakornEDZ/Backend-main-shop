@@ -7,6 +7,7 @@ const express = require('express')
 const { notFound, errorHandler } = require('./middlewares/errorHandler')
 const cors = require('cors')
 const app = express()
+import http from 'http';
 
 const port = process.env.PORT || 5050
 app.use(cors())
