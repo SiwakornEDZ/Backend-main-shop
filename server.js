@@ -34,9 +34,6 @@ app.get("/", (req, res) => {
 //     connectDb()
 //     console.log(`Listening to ${port}`);
 // })
-app.get('/', (req, res) => {
-  res.status(200).json('Welcome, your app is working well');
-})
 
 app.get('/home', (req, res) => {
     res.status(200).json('Welcome, your app is working well');
