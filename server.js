@@ -34,6 +34,9 @@ app.get("/", (req, res) => {
 //     connectDb()
 //     console.log(`Listening to ${port}`);
 // })
+app.get('/', (req, res) => {
+  res.status(200).json('Welcome, your app is working well');
+})
 
 app.get('/home', (req, res) => {
     res.status(200).json('Welcome, your app is working well');
@@ -41,22 +44,10 @@ app.get('/home', (req, res) => {
   
   
 app.listen(port, () => {
+    connectDb()
     console.log(`Server running at http://localhost:${port}`);
   });
   
   // Export the Express API
 module.exports = app
 
-// const server = http.createServer((req, res) => {
-//     // Set the response header
-//     res.writeHead(200, {'Content-Type': 'text/plain'});
-//     // Write some text to the response
-//     res.end('Welcome to my simple Node.js app!');
-// });
- 
-// // Define the port to listen on
- 
-// // Start the server
-// server.listen(port, () => {
-//     console.log(`Server is running on http://localhost:${port}`);
-// });
