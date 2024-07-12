@@ -17,6 +17,9 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(cookieParser())
 
 
+app.get('/', (req, res) => {
+  res.status(200).json('Welcome, your app is working well');
+})
 app.use('/auth', require('./routes/authRoute'))
 app.use('/users', require('./routes/userRoute'))
 app.use('/products', require('./routes/productRoute'))
@@ -24,11 +27,9 @@ app.use('/carts', require('./routes/cartRoute'))
 app.use('/orders', require('./routes/orderRoute'))
 app.use('/coupons', require('./routes/couponRoute'))
 
+
 app.use(notFound)
 app.use(errorHandler)
-app.get("/", (req, res) => { 
-    res.send("Express on Vercel"); 
-});
 
 // app.listen(port, ()=>{
 //     connectDb()
