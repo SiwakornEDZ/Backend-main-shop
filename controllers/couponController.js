@@ -34,8 +34,8 @@ getCoupons = async (req, res) => {
   };
 
 createCoupons = asyncHandler(async(req,res)=>{
-    const userId = req.user._id
-    if (!userId){
+    const couponId = req.params.couponId;
+    if (!couponId){
         res.status(400)
         throw new Error('No such user Found')
     }
@@ -47,7 +47,7 @@ createCoupons = asyncHandler(async(req,res)=>{
     
     const mergedData = {
         ...req.body,
-        listedBy: userId
+        listedBy: couponId
     }
     const Coupon = await Coupons.create(mergedData)
     res.status(201).json(Coupon)
